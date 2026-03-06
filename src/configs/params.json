@@ -33,7 +33,7 @@
     "circle_m": 0.25,
     "circle_gamma": 256.0,
 
-    "aug_backend": "imgaug",
+    "aug_backend": "albumentations",
 
     "load_mod": null,
     "results_dir": "classification_results",

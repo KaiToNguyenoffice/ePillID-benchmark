@@ -400,7 +400,7 @@ class MetricEmbeddingEvaluator(ModelEvaluator):
             elif 'post_max' in self.sidepairs_agg_method:
                 qry_lbl_sim_matrix = q2sides_lbl_sim_matrix.max(dim=2)[0].squeeze()
             else:
-                raise f"{self.sidepairs_agg_method} not supported"
+                raise ValueError(f"{self.sidepairs_agg_method} not supported")
 
         else:
             q_pw_sim_matrix = pw_dist_provider(query_outputs)            
@@ -568,7 +568,7 @@ class LogitEvaluator(ModelEvaluator):
             elif 'post_max' in self.sidepairs_agg_method:
                 qry_lbl_sim_matrix = q2sides_lbl_sim_matrix.max(dim=2)[0].squeeze()
             else:
-                raise f"{self.sidepairs_agg_method} not supported"
+                raise ValueError(f"{self.sidepairs_agg_method} not supported")
 
         else:
             qry_lbl_sim_matrix = query_outputs

@@ -77,7 +77,7 @@ def common_parser():
     parser.add_argument("--circle_gamma", default=256.0, type=float, help='circle loss scale factor')
 
     # Augmentation
-    parser.add_argument('--aug_backend', default='imgaug', choices=['imgaug', 'albumentations'],
+    parser.add_argument('--aug_backend', default='albumentations', choices=['imgaug', 'albumentations'],
                         help='augmentation library to use')
 
     parser.add_argument('--load_mod')

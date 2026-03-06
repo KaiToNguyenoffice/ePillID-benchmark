@@ -53,7 +53,7 @@ class IncrementalLabelEncoder:
         return self
 
     def transform(self, labels):
-        return np.array([self._label_to_idx[l] for l in labels])
+        return np.array([self._label_to_idx[l] for l in labels], dtype=np.int64)
 
     def inverse_transform(self, indices):
         return np.array([self._classes[i] for i in indices])

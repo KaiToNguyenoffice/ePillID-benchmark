@@ -115,7 +115,7 @@ def get_albumentations_sequences(low_gblur=1.0, high_gblur=3.0,
         ref_color.append(A.RandomGamma(gamma_limit=(50, 170), p=0.3))
 
     ref_noise = [
-        A.GaussNoise(std=(0, 3 * addgn_base_ref * 255), p=0.5),
+        A.GaussNoise(std_range=(0, 3 * addgn_base_ref), p=0.5),
         A.GaussianBlur(blur_limit=(3, max(3, int(high_gblur * 2) | 1)),
                        sigma_limit=(0, high_gblur), p=0.5),
     ]
@@ -125,7 +125,7 @@ def get_albumentations_sequences(low_gblur=1.0, high_gblur=3.0,
                                    contrast_limit=(-0.1, 0.1), p=1.0),
     ]
     cons_noise = [
-        A.GaussNoise(std=(0, 5 * addgn_base_cons * 255), p=0.5),
+        A.GaussNoise(std_range=(0, 5 * addgn_base_cons), p=0.5),
         A.GaussianBlur(blur_limit=(3, max(3, int(low_gblur * 2) | 1)),
                        sigma_limit=(0, low_gblur), p=0.5),
     ]
